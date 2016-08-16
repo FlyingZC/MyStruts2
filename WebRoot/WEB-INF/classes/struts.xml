@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 配置 Struts 可以受理的请求的扩展名 -->
+	<constant name="struts.action.extension" value="action,do,"></constant>
+	
+	<package name="testAware" extends="struts-default">
+		<action name="test-aware" class="com.zc.javaweb.TestAwareAction" method="execute">
+			<result name="SUCCESS" type="dispatcher">/aware-result.jsp</result>
+		</action>
+	</package>
+	
+	<package name="login" extends="struts-default" namespace="/">
+		<action name="login-ui">
+			<result>/login.jsp</result>
+		</action>	
+		
+		<action name="user-login" class="com.zc.javaweb.UserAction" method="execute">
+			<result name="LOGIN-SUCCESS">/login-success.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="testResult" extends="struts-default">
+	<!-- 重定向到一个action -->
+		<!-- <action name="testResult" class=" com.zc.javaweb.TestResultAction">
+			<result name="index" type="redirectAction">
+				<param name="actionName">testAction</param>
+	
+			</result>
+		</action> -->
+	
+	</package>
+	
+	<package name="testTongPeiFu" extends="struts-default">
+		<action name="UserAction-*" class="com.zc.javaweb.TestTongPeiFuAction" 
+		method="{1}User">
+			<result name="{1}-success">/success.jsp</result>
+		</action>
+	</package>
+	
+	<package name="testValueStack" extends="struts-default">
+		<action name="testValueStack" class="com.zc.javaweb.valuestack.ProductAction"
+		method="save">
+			<result name="success">/valueStack-success.jsp</result>
+		</action>
+	</package>
+	
+	
+	
+	
+</struts>

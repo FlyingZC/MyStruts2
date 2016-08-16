@@ -1,0 +1,13 @@
+160604
+1.不与ServletAPI耦合的方式获取web资源
+(1)index.jsp
+(2)TestAwareAction.java
+(3)结果aware-result.jsp
+
+2.与ServletAPI耦合的方式获取web资源
+(4)TestServletActionContext.java
+(5)TestServletAwareAction.java
+
+
+160605
+(6)TestActionSupport.java
